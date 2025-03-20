@@ -7,6 +7,32 @@
     <title>Support Local Economy Score</title>
 </head>
 <body>
+    <div class="calculator-container">
+    <h2>Support Local Economy Score Calculator</h2>
+    
+    <label for="local-accommodation">Local Accommodation ($):</label>
+    <input type="number" id="local-accommodation" placeholder="Enter amount">
+
+    <label for="local-food">Local Food ($):</label>
+    <input type="number" id="local-food" placeholder="Enter amount">
+
+    <label for="local-transport">Local Transport ($):</label>
+    <input type="number" id="local-transport" placeholder="Enter amount">
+
+    <label for="local-tours">Local Tours ($):</label>
+    <input type="number" id="local-tours" placeholder="Enter amount">
+
+    <label for="local-shopping">Local Shopping ($):</label>
+    <input type="number" id="local-shopping" placeholder="Enter amount">
+
+    <label for="total-spent">Total Spent ($):</label>
+    <input type="number" id="total-spent" placeholder="Enter total amount spent">
+
+    <button onclick="calculateScore()">Calculate Score</button>
+
+    <h3>Your Support Score: <span id="score">0</span>%</h3>
+</div>
+
     <h1>Welcome to My Travel Blog!</h1>
     <p>This is where the Support Local Economy Score calculator will go.</p>
     <script src="script.js"></script>
