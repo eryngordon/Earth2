@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: #95b0bf;
     margin: 0;
     padding: 0;
 }
@@ -17,7 +17,7 @@ body {
 }
 
 h1 {
-    color: #2c3e50;
+    color: #12263a;
 }
 
 input {
@@ -30,23 +30,23 @@ input {
 
 button {
     background-color: #27ae60;
-    color: white;
+    color: #ebe0d3;
     border: none;
     padding: 10px;
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
-    width: 100%;
+    width: 50%;
 }
 
 button:hover {
-    background-color: #219150;
+    background-color: #12263a;
 }
 
 #score {
     font-size: 24px;
     font-weight: bold;
-    color: #27ae60;
+    color: #ebe0d3;
 }
 
 #feedback {
