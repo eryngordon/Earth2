@@ -1,26 +1,42 @@
 function calculateScore() {
-    let localAccommodation = parseFloat(document.getElementById("local-accommodation").value) || 0;
-    let localFood = parseFloat(document.getElementById("local-food").value) || 0;
-    let localTransport = parseFloat(document.getElementById("local-transport").value) || 0;
-    let localTours = parseFloat(document.getElementById("local-tours").value) || 0;
-    let localShopping = parseFloat(document.getElementById("local-shopping").value) || 0;
-    let totalSpent = parseFloat(document.getElementById("total-spent").value) || 0;
+    let accommodation = document.querySelector('input[name="accommodation"]:checked').value;
+    let food = document.querySelector('input[name="food"]:checked').value;
+    let transport = document.querySelector('input[name="transport"]:checked').value;
 
-    if (totalSpent === 0) {
-        alert("Total spent must be greater than 0.");
-        return;
+    let score = 0;
+
+    // Accommodation Scoring
+    if (accommodation === "local") score += 30;
+    if (accommodation === "chain") score += 10; 
+
+    // Food Scoring
+    if (food === "local") score += 30;
+    if (food === "mixed") score += 20;
+    if (food === "chain") score += 10;
+
+    // Transport Scoring
+    if (transport === "local") score += 30;
+    if (transport === "mixed") score += 20;
+    if (transport === "rental") score += 10;
+
+    // Normalize to percentage (out of 90 total points)
+    let supportScore = Math.round((score / 90) * 100);
+
+    document.getElementById("score").textContent = supportScore + "%";
+    document.getElementById("progress-bar").style.width = supportScore + "%";
+
+    // Message feedback
+    let message = "";
+    if (supportScore < 30) {
+        message = "Try to support more local businesses!";
+    } else if (supportScore < 70) {
+        message = "Good effort! You're making a difference.";
+    } else {
+        message = "Amazing! You're a true local economy supporter!";
     }
+    document.getElementById("message").textContent = message;
+}
 
-    let weightedTotal = (localAccommodation * 0.3) + 
-                        (localFood * 0.25) + 
-                        (localTransport * 0.15) + 
-                        (localTours * 0.2) + 
-                        (localShopping * 0.1);
-
-    let supportScore = (weightedTotal / totalSpent) * 100;
-    supportScore = Math.round(supportScore);
-
-    document.getElementById("score").textContent = supportScore;
 
     let feedbackMessage = "";
     if (supportScore >= 80) {
