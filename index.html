@@ -7,26 +7,25 @@
     <title>Support Local Economy Score</title>
 </head>
 <body>
-    <div class="calculator-container">
-    <h2>Support Local Economy Score Calculator</h2>
-    
-    <label for="local-accommodation">Local Accommodation ($):</label>
-    <input type="number" id="local-accommodation" placeholder="Enter amount">
+<div class="question">
+    <label>Where did you stay?</label><br>
+    <input type="radio" name="accommodation" value="local" checked> Locally Owned Hotel/Guesthouse <br>
+    <input type="radio" name="accommodation" value="chain"> International Chain Hotel <br>
+</div>
 
-    <label for="local-food">Local Food ($):</label>
-    <input type="number" id="local-food" placeholder="Enter amount">
+<div class="question">
+    <label>Where did you eat most often?</label><br>
+    <input type="radio" name="food" value="local" checked> Local Restaurants/Food Stalls <br>
+    <input type="radio" name="food" value="mixed"> Mix of Local & International <br>
+    <input type="radio" name="food" value="chain"> International Chain Restaurants <br>
+</div>
 
-    <label for="local-transport">Local Transport ($):</label>
-    <input type="number" id="local-transport" placeholder="Enter amount">
-
-    <label for="local-tours">Local Tours ($):</label>
-    <input type="number" id="local-tours" placeholder="Enter amount">
-
-    <label for="local-shopping">Local Shopping ($):</label>
-    <input type="number" id="local-shopping" placeholder="Enter amount">
-
-    <label for="total-spent">Total Spent ($):</label>
-    <input type="number" id="total-spent" placeholder="Enter total amount spent">
+<div class="question">
+    <label>What kind of transport did you use the most?</label><br>
+    <input type="radio" name="transport" value="local" checked> Local Public Transport / Local Taxi <br>
+    <input type="radio" name="transport" value="mixed"> Mix of Local & International <br>
+    <input type="radio" name="transport" value="rental"> Rental Car / International Taxi Service <br>
+</div>
 
     <button onclick="calculateScore()">Calculate Score</button>
 
